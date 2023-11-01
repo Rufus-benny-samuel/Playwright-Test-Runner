@@ -1,7 +1,5 @@
 name: workflow_01
 on:
-  push:
-    branches: '**'
   workflow_dispatch:
      inputs:
       workflow_02:
