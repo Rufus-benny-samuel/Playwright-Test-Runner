@@ -27,7 +27,7 @@ const config: PlaywrightTestConfig = {
 
     use: {
         viewport: null,
-        headless: true,
+        headless: false,
         // browserName: "chromium",
         screenshot: "on",
         video: "on",

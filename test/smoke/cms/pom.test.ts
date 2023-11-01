@@ -19,10 +19,16 @@ test.describe("POM - TC001", () => {
         await headerPage.clickSignOutLink();
     });
     test.only("Login again", async ({ headerPage, page, loginPage }) => {
-        await page.goto("https://letcode.in/")
-        await headerPage.clickLoginLink();
-        await loginPage.login("koushik350@gmail.com", data.pass);
-        await page.waitForNavigation();
-        expect(page.url()).toBe("https://letcode.in/")
+        await page.goto("https://in.bookmyshow.com/explore/home/chennai")
+        // await page.waitForLoadState("load")
+        // await page.locator("//span[text()='Chennai']").click()
+        await page.locator("//span[text()='Search for Movies, Events, Plays, Sports and Activities']").click()
+        await page.fill("//input[@class='bwc__sc-1iyhybo-6 ilhhay']", 'Leo')
+        await page.locator("(//div[@class='bwc__sc-3t17w7-15 ddrnsU'])[1]").click()
+
+        // await headerPage.clickLoginLink();
+        // await loginPage.login("koushik350@gmail.com", data.pass);
+        // await page.waitForNavigation();
+        // expect(page.url()).toBe("https://letcode.in/")
     })
 })
