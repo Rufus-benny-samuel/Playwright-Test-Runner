@@ -29,4 +29,4 @@ jobs:
           curl -X POST https://api.github.com/repos/rrufusbenny/Playwright-Test-Runner/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACTIONS_KEY }} \
-          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"https://github.com/rrufusbenny/Playwright-Test-Runner.git"'" }}'
+          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "rrufusbenny/Playwright-Test-Runner" }}'
