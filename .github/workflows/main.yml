@@ -26,7 +26,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Test
         run: |
-          curl -X POST https://api.github.com/repos/rrufusbenny/Playwright-Test-Runner/dispatches \
+          curl -X POST https://api.github.com/repos/:rrufusbenny/:Playwright-Test-Runner/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACTIONS_KEY }} \
-          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "rrufusbenny/Playwright-Test-Runner" }}'
+          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "https://github.com/rrufusbenny/Playwright-Test-Runner" }}'
