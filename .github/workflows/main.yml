@@ -20,13 +20,12 @@ on:
 
 jobs:
   test:
-    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Test
+      - name: Trigger Workflow 2
         run: |
-          curl -X POST https://api.github.com/repos/:rrufusbenny/:Playwright-Test-Runner/dispatches \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.ACTIONS_KEY }} \
-          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "https://github.com/rrufusbenny/Playwright-Test-Runner" }}'
+          curl -X POST \
+            -H 'Accept: application/vnd.github.everest-preview+json' \
+            -u ${{ secrets.ACTIONS_KEY }} \
+            --data '{"event_type": "trigger_workflow_2", "client_payload": {}}' \
+            https://github.com/rrufusbenny/Playwright-Test-Runner/dispatches
